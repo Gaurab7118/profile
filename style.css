@@ -2115,11 +2115,50 @@ body {
    ========================================================================== */
 
 @media (max-width: 1024px) {
+  .nav-dock {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-surface);
+    border-radius: 0;
+    border-bottom: 1px solid var(--border-glass);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-lg);
+    z-index: 250;
+  }
+
+  .nav-dock.open {
+    display: block;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .nav-item {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
   .hero-grid,
+  .hero-merged-grid,
   .about-modern-grid,
   .trajectory-split {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
+  }
+
+  .hero-portrait-card {
+    max-width: 440px;
+    margin-inline: auto;
   }
 
   .arsenal-card {
@@ -2133,59 +2172,102 @@ body {
   }
 
   .meta-details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-dock {
-    display: none;
-    position: absolute;
-    top: 74px;
-    left: 0;
-    width: 100%;
-    background: var(--bg-surface);
-    border-radius: 0;
-    border-bottom: 1px solid var(--border-glass);
-    padding: 20px;
-    box-shadow: var(--shadow-lg);
+  .container,
+  .header-shell {
+    width: min(1200px, calc(100% - 32px));
   }
 
-  .nav-dock.open {
-    display: block;
+  .section {
+    padding: 58px 0;
   }
 
-  .nav-items {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
+  .hero-section {
+    padding: 42px 0 38px;
   }
 
   .hero-headline {
-    font-size: 2.2rem;
+    font-size: clamp(1.75rem, 6.2vw, 2.3rem);
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .about-portrait-wrap {
+    min-height: 270px;
+    max-height: 360px;
+  }
+
+  .meta-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tag-title {
+    font-size: 1.75rem;
+  }
+
+  .tag-title.single-line-title {
+    white-space: normal;
+    font-size: 1.65rem;
+  }
+
+  .project-filter-dock {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
   }
 
   .stats-counter-strip {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .counter-card {
+    padding: 18px 12px;
+  }
+
+  .counter-num {
+    font-size: 2rem;
   }
 
   .arsenal-card {
     flex: 0 0 100%;
     min-width: 0;
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .projects-slider-wrap {
+    gap: 8px;
   }
 
   .modern-project-card {
-    flex: 0 0 88%;
-    min-width: 260px;
+    flex: 0 0 100%;
+    min-width: 0;
+    min-height: auto;
   }
 
   .slider-nav-btn {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .paper-card {
+    padding: 24px 18px;
+  }
+
+  .paper-footer-actions,
+  .contact-buttons-row,
+  .social-pills-wrap,
+  .footer-links-col {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .contact-card-box {
@@ -2195,5 +2277,33 @@ body {
   .footer-shell {
     flex-direction: column;
     text-align: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-caption {
+    display: none;
+  }
+
+  .header-utils {
+    gap: 6px;
+  }
+
+  .admin-pill-btn span {
+    display: none;
+  }
+
+  .admin-pill-btn {
+    padding: 8px 10px;
+  }
+
+  .btn-sm {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+  }
+
+  .skill-detail-box {
+    padding: 18px 16px;
   }
 }

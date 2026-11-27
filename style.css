@@ -304,9 +304,18 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  white-space: nowrap;
   background: linear-gradient(90deg, var(--emerald-light), var(--cyan-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.caption-short {
+  display: none;
+}
+
+.mobile-nav-actions {
+  display: none;
 }
 
 /* Nav Pill Dock */
@@ -2148,6 +2157,30 @@ body {
     display: flex;
   }
 
+  .header-utils #themeToggleBtn,
+  .header-utils .admin-pill-btn,
+  .header-utils #navResumeBtn {
+    display: none;
+  }
+
+  .mobile-nav-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding-top: 14px;
+    margin-top: 12px;
+    border-top: 1px solid var(--border-glass);
+  }
+
+  .mobile-theme-btn {
+    width: auto;
+    padding: 0 12px;
+    gap: 7px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
   .hero-grid,
   .hero-merged-grid,
   .about-modern-grid,
@@ -2281,21 +2314,17 @@ body {
   }
 }
 
-@media (max-width: 480px) {
-  .brand-caption {
+@media (max-width: 560px) {
+  .caption-full {
     display: none;
+  }
+
+  .caption-short {
+    display: inline;
   }
 
   .header-utils {
     gap: 6px;
-  }
-
-  .admin-pill-btn span {
-    display: none;
-  }
-
-  .admin-pill-btn {
-    padding: 8px 10px;
   }
 
   .btn-sm {

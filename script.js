@@ -414,15 +414,17 @@
     const savedFont = localStorage.getItem('site-font-style') || 'space-grotesk';
     applyFontStyle(savedFont);
 
-    const btn = document.getElementById('themeToggleBtn');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const current = document.body.getAttribute('data-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.body.setAttribute('data-theme', next);
-        localStorage.setItem('site-theme', next);
-      });
-    }
+    const toggleTheme = () => {
+      const current = document.body.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('site-theme', next);
+    };
+
+    ['themeToggleBtn', 'mobileThemeToggleBtn'].forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) btn.addEventListener('click', toggleTheme);
+    });
   }
 
   // =========================================================================
@@ -760,7 +762,7 @@
       const isDataUrl = p.resumeUrl.startsWith('data:');
       const rUrl = (isExternal || isDataUrl) ? p.resumeUrl : p.resumeUrl.replace(/^(\.\.\/)+/, '');
       const dlName = p.resumePdfName || 'Gaurab_Samadder_CV.pdf';
-      ['navResumeBtn', 'heroResumeBtn', 'aboutCvDownloadBtn'].forEach(id => {
+      ['navResumeBtn', 'mobileNavResumeBtn', 'heroResumeBtn', 'aboutCvDownloadBtn'].forEach(id => {
         const btn = document.getElementById(id);
         if (!btn) return;
         btn.href = rUrl;

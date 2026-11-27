@@ -845,6 +845,34 @@ button {
   margin-bottom: 24px;
 }
 
+.hero-quick-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.quick-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.quick-social-btn:hover {
+  color: var(--emerald-light);
+  border-color: var(--emerald);
+  background: rgba(59, 130, 246, 0.12);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 1024px) {
   .hero-merged-grid {
     grid-template-columns: 1fr;

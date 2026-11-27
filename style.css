@@ -848,8 +848,8 @@ button {
 .hero-quick-socials {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 22px;
   flex-wrap: wrap;
 }
 

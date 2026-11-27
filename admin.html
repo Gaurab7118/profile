@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurab Samadder | IIT KGP CSE Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- Favicon Suite (Universal http:// and file:/// support) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- Authentication PIN Gate -->
+  <div id="authGate">
+    <div class="auth-box">
+      <div class="auth-icon">GS</div>
+      <h2 class="auth-title">Admin Portal</h2>
+      <p class="auth-desc">Enter your security PIN to manage your portfolio.</p>
+      <input type="password" id="adminPinInput" class="auth-input" maxlength="8" placeholder="••••" autofocus />
+      <button id="adminLoginBtn" class="auth-btn">Unlock Dashboard</button>
+      <p id="authError" class="auth-error"></p>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard Layout -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-badge" id="sidebarLogoBadge">GS</div>
+        <div>
+          <div class="sidebar-brand-title">Gaurab Samadder</div>
+          <div class="sidebar-brand-sub">IIT KGP • CSE CMS</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-label">Content</div>
+        <button class="nav-tab-btn active" data-tab="profile">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Profile & Photos
+        </button>
+
+        <button class="nav-tab-btn" data-tab="skills">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Skills & Tech Stack
+        </button>
+
+        <button class="nav-tab-btn" data-tab="projects">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          Projects
+        </button>
+
+        <button class="nav-tab-btn" data-tab="publications">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Publications
+        </button>
+
+        <button class="nav-tab-btn" data-tab="timeline">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Experience & Education
+        </button>
+
+        <div class="nav-group-label">Assets & Sync</div>
+        <button class="nav-tab-btn" data-tab="resume">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          CV / Resume
+        </button>
+
+        <button class="nav-tab-btn" data-tab="github">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub Sync & Backup
+        </button>
+
+        <div class="nav-group-label">System</div>
+        <button class="nav-tab-btn" data-tab="settings">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Appearance & Security
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" target="_blank" class="btn-admin btn-admin-secondary" style="width: 100%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          View Portfolio
+        </a>
+        <button id="logoutBtn" class="btn-admin btn-admin-danger" style="width: 100%;">
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+
+      <!-- Header Toolbar -->
+      <div class="main-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 4px;">
+            <h1>Portfolio Management</h1>
+            <span id="serverStatusBadge" class="status-badge">
+              Checking connection...
+            </span>
+          </div>
+          <p>Edit your profile, tech stack, projects, publications, and appearance settings.</p>
+        </div>
+        <div class="header-actions">
+          <a href="index.html" target="_blank" class="btn-admin btn-admin-secondary">
+            Open Live Site
+          </a>
+          <button id="quickSaveBtn" class="btn-admin btn-admin-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save All Changes
+          </button>
+        </div>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- TAB 1: Profile & Photos -->
+      <!-- ============================================== -->
+      <section id="tab-profile" class="tab-pane active">
+        <!-- Personal Info -->
+        <div class="admin-card">
+          <h2 class="admin-card-title">Personal Information & Headings</h2>
+          <p class="admin-card-desc">Basic details shown in your hero section and about card.</p>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" id="inputName" class="form-input" placeholder="e.g. Gaurab Samadder" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Navbar Logo Badge / Initials</label>
+              <input type="text" id="inputLogoBadge" class="form-input" placeholder="e.g. GS, &lt;/&gt;, ⚡" maxlength="6" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Professional Headline</label>
+              <input type="text" id="inputHeadline" class="form-input" placeholder="e.g. Full-Stack Developer & UI/UX Designer" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Status Badge</label>
+              <input type="text" id="inputStatus" class="form-input" placeholder="e.g. Available for full-time & freelance" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Location</label>
+              <input type="text" id="inputLocation" class="form-input" placeholder="e.g. San Francisco, CA / Remote" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Academic Email Address</label>
+              <input type="email" id="inputEmail" class="form-input" placeholder="gaurabsamadder711826@iitkgp.ac.in" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Official Email Address</label>
+              <input type="email" id="inputOfficialEmail" class="form-input" placeholder="gaurab.samadder@iitkgp.ac.in" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Phone Number (Optional)</label>
+              <input type="text" id="inputPhone" class="form-input" placeholder="+1 (555) 000-0000" />
+            </div>
+
+            <div class="form-group col-span-2">
+              <label class="form-label">Hero Bio (Short Pitch)</label>
+              <textarea id="inputBio" class="form-textarea" placeholder="Short 1-2 sentence pitch shown in the hero section..."></textarea>
+            </div>
+
+            <div class="form-group col-span-2">
+              <label class="form-label">Detailed About Me</label>
+              <textarea id="inputAbout" class="form-textarea" style="min-height: 120px;" placeholder="Full background narrative shown in About section..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photos & Avatars -->
+        <div class="admin-card">
+          <h2 class="admin-card-title">Profile Photos & Banners</h2>
+          <p class="admin-card-desc">Choose a photo from your computer or paste an image URL.</p>
+
+          <div class="photo-banner-grid">
+            <!-- 1. Hero Small Avatar Upload -->
+            <div class="form-group">
+              <label class="form-label">Hero Card Avatar / Small Profile Photo</label>
+              <div class="image-upload-wrapper">
+                <img id="avatarPreview" class="image-preview" src="" alt="Avatar Preview" />
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                    <label class="btn-admin btn-admin-secondary btn-admin-sm" style="cursor: pointer;">
+                      Choose Photo
+                      <input type="file" id="inputAvatarFile" accept="image/*" style="display: none;" />
+                    </label>
+                    <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="repositionAvatarBtn">
+                      Resize & Place
+                    </button>
+                  </div>
+                  <input type="text" id="inputAvatarUrl" class="form-input" style="font-size: 0.82rem;" placeholder="Or paste Avatar Image URL" />
+                  <div style="font-size: 0.74rem; color: var(--admin-muted); margin-top: 6px;">Shown in the top Hero profile card. Use Resize & Place to adjust framing.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. About Me Large Portrait Upload -->
+            <div class="form-group">
+              <label class="form-label">About Me Large Portrait Photo</label>
+              <div class="image-upload-wrapper">
+                <img id="aboutImagePreview" class="image-preview" src="" alt="About Portrait Preview" />
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                    <label class="btn-admin btn-admin-secondary btn-admin-sm" style="cursor: pointer;">
+                      Choose About Photo
+                      <input type="file" id="inputAboutImageFile" accept="image/*" style="display: none;" />
+                    </label>
+                    <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="repositionAboutImgBtn">
+                      Resize & Place
+                    </button>
+                  </div>
+                  <input type="text" id="inputAboutImageUrl" class="form-input" style="font-size: 0.82rem;" placeholder="Or paste About Portrait Image URL" />
+                  <div style="font-size: 0.74rem; color: var(--admin-muted); margin-top: 6px;">Shown in the large About Me section. Independent from Hero Avatar.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Banner Upload -->
+            <div class="form-group">
+              <label class="form-label">Header / Hero Background Banner</label>
+              <div class="image-upload-wrapper">
+                <img id="bannerPreview" class="image-preview" src="" alt="Banner Preview" />
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                    <label class="btn-admin btn-admin-secondary btn-admin-sm" style="cursor: pointer;">
+                      Choose Banner
+                      <input type="file" id="inputBannerFile" accept="image/*" style="display: none;" />
+                    </label>
+                    <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="repositionBannerBtn">
+                      Resize & Place
+                    </button>
+                  </div>
+                  <input type="text" id="inputBannerUrl" class="form-input" style="font-size: 0.82rem;" placeholder="Or paste Banner Image URL" />
+                  <div style="font-size: 0.74rem; color: var(--admin-muted); margin-top: 6px;">Auto-resizes upon selection. Use Resize & Place to adjust framing.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Systems & AI Lab Photo Upload -->
+            <div class="form-group">
+              <label class="form-label">Systems & AI Research Spotlight Photo</label>
+              <div class="image-upload-wrapper">
+                <img id="labImagePreview" class="image-preview" src="" alt="Lab Preview" />
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                    <label class="btn-admin btn-admin-secondary btn-admin-sm" style="cursor: pointer;">
+                      Choose Research Photo
+                      <input type="file" id="inputLabImageFile" accept="image/*" style="display: none;" />
+                    </label>
+                    <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="repositionLabImgBtn">
+                      Resize & Place
+                    </button>
+                  </div>
+                  <input type="text" id="inputLabImageUrl" class="form-input" style="font-size: 0.82rem;" placeholder="Or paste Research / Lab Image URL" />
+                  <div style="font-size: 0.74rem; color: var(--admin-muted); margin-top: 6px;">Auto-resizes upon selection. Use Resize & Place to adjust framing.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div>
+              <h2 class="admin-card-title" style="margin-bottom: 0;">Social & Professional Links</h2>
+              <p class="admin-card-desc" style="margin-bottom: 0;">GitHub, LinkedIn, Twitter/X, and portfolio links.</p>
+            </div>
+            <button id="addSocialBtn" class="btn-admin btn-admin-secondary btn-admin-sm">+ Add Social Link</button>
+          </div>
+          <div id="socialLinksList"></div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 2: Skills Manager -->
+      <!-- ============================================== -->
+      <section id="tab-skills" class="tab-pane">
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h2 class="admin-card-title" style="margin-bottom: 0;">Skills & Technologies</h2>
+              <p class="admin-card-desc" style="margin-bottom: 0;">Organize your skills into categories and adjust proficiency percentages.</p>
+            </div>
+            <button id="addSkillCategoryBtn" class="btn-admin btn-admin-primary btn-admin-sm">+ Add Skill Category</button>
+          </div>
+
+          <div id="skillsCategoryContainer">
+            <!-- Dynamic skills categories -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 3: Projects Manager -->
+      <!-- ============================================== -->
+      <section id="tab-projects" class="tab-pane">
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h2 class="admin-card-title" style="margin-bottom: 0;">Portfolio Projects</h2>
+              <p class="admin-card-desc" style="margin-bottom: 0;">Showcase systems, research prototypes, and GitHub repositories.</p>
+            </div>
+            <button id="addNewProjectBtn" class="btn-admin btn-admin-primary btn-admin-sm">+ Add New Project</button>
+          </div>
+
+          <div id="projectsAdminList">
+            <!-- Dynamic projects list -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB: Publications Manager -->
+      <!-- ============================================== -->
+      <section id="tab-publications" class="tab-pane">
+        <!-- Visibility & Controls Card -->
+        <div class="admin-card" style="border: 1px solid rgba(59, 130, 246, 0.35);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <h2 class="admin-card-title" style="margin-bottom: 0;">Research & Paper Publications</h2>
+                <span id="pubVisibilityBadge" class="tag-pill" style="font-size: 0.8rem; padding: 4px 12px; font-weight: 700;">Status: Loading...</span>
+              </div>
+              <p class="admin-card-desc" style="margin-bottom: 0;">Showcase academic publications, conferences, and journal papers on your portfolio.</p>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <!-- Show / Hide Button -->
+              <button id="togglePublicationsBtn" class="btn-admin" style="font-weight: 700; padding: 9px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;">
+                <span id="togglePubIcon">👁️</span>
+                <span id="togglePubText">Toggle Visibility</span>
+              </button>
+
+              <button id="addNewPublicationBtn" class="btn-admin btn-admin-primary btn-admin-sm">
+                + Add Paper Publication
+              </button>
+            </div>
+          </div>
+
+          <div id="pubVisibilityNotice" style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; color: var(--admin-muted); display: flex; align-items: center; gap: 10px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span id="pubVisibilityNoticeText">Use the toggle button above to show or hide the entire Publications section on your website.</span>
+          </div>
+        </div>
+
+        <!-- Publications List Container -->
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--admin-text);">Publication Entries</h3>
+            <span id="pubCountBadge" style="font-size: 0.82rem; color: var(--admin-muted); font-family: var(--font-mono);">0 Papers</span>
+          </div>
+          <div id="publicationsAdminList">
+            <!-- Dynamic publications list -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 4: Experience & Education -->
+      <!-- ============================================== -->
+      <section id="tab-timeline" class="tab-pane">
+        <!-- Work Experience -->
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h2 class="admin-card-title" style="margin-bottom: 0;">Work Experience Timeline</h2>
+              <p class="admin-card-desc" style="margin-bottom: 0;">Past roles, companies, dates, and achievements.</p>
+            </div>
+            <button id="addExperienceBtn" class="btn-admin btn-admin-secondary btn-admin-sm">+ Add Job Experience</button>
+          </div>
+          <div id="experienceAdminList"></div>
+        </div>
+
+        <!-- Education -->
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h2 class="admin-card-title" style="margin-bottom: 0;">Education & Degrees</h2>
+              <p class="admin-card-desc" style="margin-bottom: 0;">Universities, diplomas, and relevant academic background.</p>
+            </div>
+            <button id="addEducationBtn" class="btn-admin btn-admin-secondary btn-admin-sm">+ Add Education</button>
+          </div>
+          <div id="educationAdminList"></div>
+        </div>
+
+        <!-- Certificates -->
+        <div class="admin-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h2 class="admin-card-title" style="margin-bottom: 0;">Certificates</h2>
+              <p class="admin-card-desc" style="margin-bottom: 0;">GATE rank, competitive exams, and verified technical certificates.</p>
+            </div>
+            <button id="addCertBtn" class="btn-admin btn-admin-secondary btn-admin-sm">+ Add Certificate</button>
+          </div>
+          <div id="certAdminList"></div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 5: CV / Resume Manager -->
+      <!-- ============================================== -->
+      <section id="tab-resume" class="tab-pane">
+        <div class="admin-card">
+          <h2 class="admin-card-title">CV / Resume Document</h2>
+          <p class="admin-card-desc">
+            Upload your PDF resume from your computer or paste an external link (Google Drive, Dropbox, etc.).
+          </p>
+
+          <!-- Current CV Status Banner -->
+          <div style="padding: 16px; background: var(--admin-card-inner); border: 1px solid var(--admin-border); border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; gap: 16px;">
+            <div>
+              <div style="font-size: 0.8rem; color: var(--admin-muted); margin-bottom: 4px;">CURRENT ATTACHED RESUME:</div>
+              <strong id="currentResumeDisplay" style="color: #6366f1; word-break: break-all;">No resume attached</strong>
+            </div>
+            <button id="testDownloadCvBtn" class="btn-admin btn-admin-primary btn-admin-sm">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Test / Download Resume
+            </button>
+          </div>
+
+          <div class="form-grid">
+            <!-- Upload Box -->
+            <div class="form-group col-span-2">
+              <label class="form-label">Upload New Resume File (PDF)</label>
+              <div class="image-upload-wrapper" style="padding: 24px;">
+                <div style="font-size: 2.5rem;">📄</div>
+                <div style="flex: 1;">
+                  <label class="btn-admin btn-admin-primary btn-admin-sm" style="display: inline-block; cursor: pointer; margin-bottom: 8px;">
+                    📎 Choose PDF Resume from Computer
+                    <input type="file" id="inputResumeFile" accept=".pdf,application/pdf" style="display: none;" />
+                  </label>
+                  <p id="cvUploadMessage" style="font-size: 0.85rem; color: var(--admin-muted);">
+                    Select a PDF file. It will be saved directly and linked to your website.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct URL Box -->
+            <div class="form-group col-span-2">
+              <label class="form-label">Or Custom Resume URL (Google Drive, Dropbox, or custom host)</label>
+              <input type="text" id="inputResumeUrl" class="form-input" placeholder="https://drive.google.com/... or assets/resume.pdf" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 6: Sync to GitHub & Cross-Browser Sync -->
+      <!-- ============================================== -->
+      <section id="tab-github" class="tab-pane">
+        <!-- Direct 1-Click GitHub API Sync -->
+        <div class="admin-card" style="border: 1px solid rgba(99, 102, 241, 0.4);">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <span style="font-size: 1.4rem;">🚀</span>
+            <h2 class="admin-card-title" style="margin-bottom: 0;">Publish to GitHub Pages (Worldwide Reflect)</h2>
+          </div>
+          <p class="admin-card-desc">
+            To make your changes visible to <strong>everyone on the internet and across all browsers</strong>, publish directly to your GitHub repository.
+          </p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">GitHub Personal Access Token (PAT)</label>
+              <input type="password" id="ghTokenInput" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+              <span style="font-size: 0.75rem; color: var(--admin-muted);">Stored only inside your local browser. Token requires <strong>repo</strong> or <strong>contents:write</strong> permission.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Repository Name (username/repo)</label>
+              <input type="text" id="ghRepoInput" class="form-input" placeholder="your-username/your-username.github.io" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Branch</label>
+              <input type="text" id="ghBranchInput" class="form-input" value="main" placeholder="main" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Data File Path</label>
+              <input type="text" id="ghPathInput" class="form-input" value="data/profile.json" />
+            </div>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <button id="publishToGithubBtn" class="btn-admin btn-admin-primary" style="padding: 12px 24px; font-size: 1rem;">
+              🚀 Publish Live to GitHub Pages
+            </button>
+          </div>
+        </div>
+
+        <!-- Manual File Download / Backup -->
+        <div class="admin-card">
+          <h2 class="admin-card-title">Manual Data Export (Zero Token Needed)</h2>
+          <p class="admin-card-desc">
+            Prefer not to use a GitHub Token? Simply download the updated <code>profile.json</code> file below, go to your GitHub repository on GitHub.com, and drag-and-drop or replace the file in the <code>data/</code> folder!
+          </p>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button id="exportJsonBtn" class="btn-admin btn-admin-secondary">
+              📥 Download profile.json
+            </button>
+            <button id="copyJsonBtn" class="btn-admin btn-admin-secondary">
+              📋 Copy JSON to Clipboard
+            </button>
+            <label class="btn-admin btn-admin-secondary" style="cursor: pointer;">
+              📤 Import profile.json File
+              <input type="file" id="importJsonFile" accept=".json,application/json" style="display: none;" />
+            </label>
+            <button id="resetDefaultsBtn" class="btn-admin btn-admin-danger" style="margin-left: auto;">
+              🔄 Reset to Defaults
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 7: Appearance & Security Settings -->
+      <!-- ============================================== -->
+      <section id="tab-settings" class="tab-pane">
+        <div class="admin-card" style="margin-bottom: 24px;">
+          <h2 class="admin-card-title">Site Font Style</h2>
+          <p class="admin-card-desc">Choose the typography style for your public portfolio page.</p>
+
+          <div style="max-width: 480px;">
+            <div class="form-group">
+              <label class="form-label" for="fontStyleSelect">Font Family</label>
+              <select id="fontStyleSelect" class="form-input">
+                <option value="space-grotesk">Space Grotesk (Technical / Modern)</option>
+                <option value="inter">Inter (Clean Geometric Sans)</option>
+                <option value="ibm-plex">IBM Plex Sans (Engineering / Academic)</option>
+                <option value="jetbrains-mono">JetBrains Mono (Developer Monospace)</option>
+                <option value="source-serif">Source Serif 4 (Academic Editorial Serif)</option>
+              </select>
+            </div>
+            <div id="fontStylePreview" style="padding: 14px 16px; background: var(--admin-card-inner); border: 1px solid var(--admin-border); border-radius: 3px; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.5; color: var(--admin-text);">
+              <strong>Gaurab Samadder</strong> — M.Tech Scholar in Computer Science &amp; Engineering at IIT Kharagpur.
+            </div>
+            <button id="saveFontStyleBtn" type="button" class="btn-admin btn-admin-primary">Save Font Style</button>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h2 class="admin-card-title">Admin Dashboard Security</h2>
+          <p class="admin-card-desc">Change the passcode required to access this admin panel.</p>
+
+          <div style="max-width: 320px;">
+            <div class="form-group">
+              <label class="form-label">New 4-Digit Security PIN</label>
+              <input type="password" id="inputNewPin" class="form-input" maxlength="8" placeholder="Enter new PIN" />
+            </div>
+            <button id="savePinBtn" class="btn-admin btn-admin-primary">Update Security PIN</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal Dialog for Add / Edit Project -->
+  <div id="projectEditModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 650px;">
+      <button id="closeProjectModal" class="modal-close" aria-label="Close Modal">&times;</button>
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 20px;">Project Details</h3>
+
+      <form id="projectEditForm">
+        <div class="form-grid">
+          <div class="form-group col-span-2">
+            <label class="form-label">Project Title *</label>
+            <input type="text" id="projModalTitle" class="form-input" placeholder="e.g. CloudFlow SaaS Analytics" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <input type="text" id="projModalCategory" class="form-input" placeholder="e.g. Full Stack, AI / ML, Mobile" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tags / Tech Stack (comma separated)</label>
+            <input type="text" id="projModalTags" class="form-input" placeholder="React, Node.js, Tailwind, AWS" />
+          </div>
+
+          <div class="form-group col-span-2">
+            <label class="form-label">Description *</label>
+            <textarea id="projModalDesc" class="form-textarea" placeholder="Explain what problem it solves and key features..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Live Demo URL</label>
+            <input type="url" id="projModalLive" class="form-input" placeholder="https://myproject.com" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">GitHub Repository URL</label>
+            <input type="url" id="projModalGitHub" class="form-input" placeholder="https://github.com/user/project" />
+          </div>
+
+          <!-- Cover Image Upload & URL -->
+          <div class="form-group col-span-2">
+            <label class="form-label">Project Cover Image</label>
+            <div class="image-upload-wrapper">
+              <img id="projModalImagePreview" class="image-preview" src="" alt="Project Preview" style="width: 120px;" />
+              <div style="flex: 1;">
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                  <label class="btn-admin btn-admin-secondary btn-admin-sm" style="cursor: pointer;">
+                    📁 Choose Cover Image
+                    <input type="file" id="projModalImageFile" accept="image/*" style="display: none;" />
+                  </label>
+                  <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="repositionProjImgBtn">
+                    ✂️ Resize & Place
+                  </button>
+                </div>
+                <input type="text" id="projModalImage" class="form-input" placeholder="Or paste image URL" />
+                <div style="font-size: 0.73rem; color: var(--admin-muted); margin-top: 5px;">⚡ Auto-resizes and updates immediately upon photo selection. Use ✂️ to adjust framing.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-span-2">
+            <label class="form-label">Project Demo Video URL (Optional)</label>
+            <input type="text" id="projModalVideo" class="form-input" placeholder="MP4 path (e.g. assets/demo.mp4) or YouTube / Vimeo URL" />
+          </div>
+
+          <div class="form-group col-span-2" style="flex-direction: row; align-items: center; gap: 10px;">
+            <input type="checkbox" id="projModalFeatured" style="width: 18px; height: 18px;" checked />
+            <label for="projModalFeatured" class="form-label" style="cursor: pointer; margin: 0;">Show in Featured Projects</label>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+          <button type="submit" class="btn-admin btn-admin-primary">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Photo Resizer & Positioner Modal -->
+  <div id="imageCropperModal" class="modal-overlay">
+    <div class="modal-content cropper-modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <h3 style="font-size: 1.3rem; font-weight: 700;">✂️ Photo Resizer & Positioner</h3>
+        <button id="closeCropperModal" class="modal-close" aria-label="Close Cropper" onclick="closeCropperModal()">&times;</button>
+      </div>
+      <p class="cropper-instructions">
+        <strong>Drag to move/center</strong> your face or subject. Use the zoom slider or buttons to <strong>zoom in/out</strong>.
+      </p>
+
+      <!-- Viewport / Canvas Container -->
+      <div class="cropper-viewport-container">
+        <div id="cropperViewport" class="cropper-viewport">
+          <canvas id="cropperCanvas" width="500" height="500"></canvas>
+          <div class="cropper-grid-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Controls & Adjustments Toolbar -->
+      <div class="cropper-toolbar">
+        <!-- Zoom Controls -->
+        <div class="cropper-control-group">
+          <label>🔍 Zoom</label>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="cropperZoomOutBtn" onclick="zoomCropper(-0.1)" title="Zoom Out (shrink)" style="padding: 4px 10px; font-weight: bold;">➖</button>
+          <input type="range" id="cropperZoomSlider" min="0.1" max="4.0" step="0.02" value="1.0" />
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="cropperZoomInBtn" onclick="zoomCropper(0.1)" title="Zoom In (enlarge)" style="padding: 4px 10px; font-weight: bold;">➕</button>
+          <span id="cropperZoomValue" class="cropper-zoom-val">100%</span>
+        </div>
+
+        <!-- Position Nudge Controls -->
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 0.8rem; color: var(--admin-muted); font-weight: 600;">Position:</span>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" onclick="nudgeCropper(0, -25)" title="Move Up">⬆️ Up</button>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" onclick="nudgeCropper(0, 25)" title="Move Down">⬇️ Down</button>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" onclick="nudgeCropper(-25, 0)" title="Move Left">⬅️ Left</button>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" onclick="nudgeCropper(25, 0)" title="Move Right">➡️ Right</button>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="cropperRotateBtn" onclick="rotateCropper()" style="margin-left: auto;">
+            🔄 Rotate 90°
+          </button>
+          <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm" id="cropperResetBtn" onclick="resetCropper()">
+            ↩ Reset
+          </button>
+        </div>
+
+        <div class="cropper-actions-row" style="margin-top: 4px;">
+          <div class="cropper-aspect-group">
+            <span style="font-size: 0.8rem; color: var(--admin-muted); margin-right: 4px; font-weight: 600;">Aspect Ratio:</span>
+            <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm cropper-aspect-btn active" data-aspect="1:1" data-shape="circle" onclick="setCropperAspect('1:1', 'circle')">
+              1:1 Avatar
+            </button>
+            <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm cropper-aspect-btn" data-aspect="4:5" data-shape="rect" onclick="setCropperAspect('4:5', 'rect')">
+              4:5 Portrait
+            </button>
+            <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm cropper-aspect-btn" data-aspect="16:9" data-shape="rect" onclick="setCropperAspect('16:9', 'rect')">
+              16:9 Banner
+            </button>
+            <button type="button" class="btn-admin btn-admin-secondary btn-admin-sm cropper-aspect-btn" data-aspect="16:10" data-shape="rect" onclick="setCropperAspect('16:10', 'rect')">
+              16:10 Card
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="cropper-footer">
+        <button type="button" class="btn-admin btn-admin-secondary" id="cropperCancelBtn" onclick="closeCropperModal()">Cancel</button>
+        <button type="button" class="btn-admin btn-admin-primary" id="cropperApplyBtn" onclick="applyCropAndSave()">✓ Apply & Save Cropped Photo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

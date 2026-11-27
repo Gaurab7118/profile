@@ -1,0 +1,221 @@
+{
+  "personal": {
+    "name": "Gaurab Samadder",
+    "headline": "M.Tech in Computer Science & Engineering @ IIT Kharagpur",
+    "status": "M.Tech CSE Scholar @ IIT Kharagpur • 2026",
+    "bio": "M.Tech student in Computer Science & Engineering at the Indian Institute of Technology Kharagpur, specializing in High-Performance Computing, Distributed Systems, and Machine Learning.",
+    "about": "Hi, I am Gaurab Samadder. I am currently pursuing my M.Tech in Computer Science & Engineering at the Indian Institute of Technology, Kharagpur (IIT KGP). My technical and research interests lie in Distributed Systems, Systems Programming, Deep Learning, and Advanced Algorithms.\n\nAt IIT Kharagpur, I have been working on building scalable systems, optimizing computational workflows, and exploring neural architectures. Prior to joining IIT KGP, I completed my Bachelor of Technology in Computer Science & Engineering with distinction.",
+    "location": "IIT Kharagpur, West Bengal, India",
+    "email": "gaurabsamadder711826@iitkgp.ac.in",
+    "officialEmail": "gaurab.samadder@iitkgp.ac.in",
+    "phone": "+91 75959 23688",
+    "avatar": "image/avatar.jpg",
+    "banner": "image/banner.jpg",
+    "labImage": "image/research.jpg",
+    "resumeUrl": "assets/cv.pdf",
+    "resumePdfName": "cv.pdf",
+    "aboutImage": "image/about.jpg",
+    "logoBadge": "GS"
+  },
+  "socials": [
+    {
+      "platform": "GitHub",
+      "icon": "github",
+      "url": "https://github.com"
+    },
+    {
+      "platform": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://linkedin.com"
+    },
+    {
+      "platform": "LeetCode",
+      "icon": "code",
+      "url": "https://leetcode.com"
+    },
+    {
+      "platform": "Email",
+      "icon": "mail",
+      "url": "mailto:gaurab.samadder@iitkgp.ac.in"
+    }
+  ],
+  "stats": [],
+  "skills": [
+    {
+      "category": "Systems & Programming",
+      "items": [
+        { "name": "C++", "icon": "cpp" },
+        { "name": "C", "icon": "c" },
+        { "name": "Python", "icon": "python" },
+        { "name": "Java", "icon": "java" },
+        { "name": "VS Code", "icon": "vscode" },
+        { "name": "Google Colab", "icon": "colab" },
+        { "name": "Windows", "icon": "windows" },
+        { "name": "Linux", "icon": "linux" },
+        { "name": "Distributed Systems & Raft", "icon": "systems" },
+        { "name": "Data Structures & Algorithms", "icon": "algo" }
+      ]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "items": [
+        { "name": "PyTorch", "icon": "pytorch" },
+        { "name": "OpenCV", "icon": "opencv" },
+        { "name": "NumPy", "icon": "numpy" },
+        { "name": "Pandas", "icon": "pandas" },
+        { "name": "Transformers", "icon": "ai" },
+        { "name": "Kaggle", "icon": "kaggle" },
+        { "name": "Matplotlib", "icon": "matplotlib" },
+        { "name": "CUDA GPU Programming", "icon": "cuda" },
+        { "name": "Scikit-Learn", "icon": "scikit" }
+      ]
+    },
+    {
+      "category": "Databases, Web & Cloud",
+      "items": [
+        { "name": "GitHub", "icon": "github" },
+        { "name": "HTML", "icon": "html" },
+        { "name": "CSS", "icon": "css" },
+        { "name": "Vercel", "icon": "vercel" },
+        { "name": "MySQL", "icon": "mysql" },
+        { "name": "SQL & PostgreSQL", "icon": "postgres" },
+        { "name": "Firebase", "icon": "firebase" },
+        { "name": "Docker", "icon": "docker" },
+        { "name": "Full-Stack Development", "icon": "fullstack" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Distributed Fault-Tolerant Key-Value Store",
+      "category": "Systems",
+      "description": "High-throughput distributed storage engine engineered in C++20 implementing the Raft consensus algorithm with leader election, log compaction, snapshotting, and write-ahead logging.",
+      "tags": [
+        "C++20",
+        "Raft Consensus",
+        "gRPC",
+        "Multi-Threading",
+        "Distributed Systems"
+      ],
+      "image": "image/research.jpg",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "title": "CUDA GPU Tensor Acceleration Engine",
+      "category": "AI / HPC",
+      "description": "Custom GPU kernels in CUDA utilizing shared memory tiling and warp-level primitives to accelerate large-scale matrix operations, achieving 3.8x speedup over standard baseline CPU executions.",
+      "tags": [
+        "CUDA",
+        "C++",
+        "PyTorch C++ API",
+        "GPU Optimization",
+        "HPC"
+      ],
+      "image": "image/research.jpg",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true
+    },
+    {
+      "id": "proj-3",
+      "title": "Custom Linux Kernel CPU Scheduler",
+      "category": "Systems",
+      "description": "Engineered a multi-level priority CPU scheduler inside the Linux Kernel (v5.15) with automated starvation prevention, dynamic task weighting, and eBPF tracing.",
+      "tags": [
+        "C",
+        "Linux Kernel",
+        "Operating Systems",
+        "Kernel Modules",
+        "eBPF"
+      ],
+      "image": "image/research.jpg",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true
+    },
+    {
+      "id": "proj-4",
+      "title": "Parallel Graph Analytics Engine with OpenMP",
+      "category": "Algorithms",
+      "description": "High-performance multi-threaded graph analytics pipeline computing PageRank and Betweenness Centrality on graphs with 10M+ edges in under 4 seconds.",
+      "tags": [
+        "Modern C++",
+        "OpenMP",
+        "SIMD",
+        "Graph Algorithms",
+        "Data Structures"
+      ],
+      "image": "image/research.jpg",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": false
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp-1",
+      "role": "Graduate Teaching Assistant (TA)",
+      "company": "Department of Computer Science & Engineering, IIT Kharagpur",
+      "period": "2024 — Present",
+      "location": "Kharagpur, India",
+      "description": "Mentoring undergraduate students in Algorithms and Operating Systems laboratory sessions, designing coding assessments, and evaluating system programming assignments."
+    },
+    {
+      "id": "exp-2",
+      "role": "M.Tech Systems Researcher",
+      "company": "Dept. of CSE, Indian Institute of Technology, Kharagpur",
+      "period": "2024 — Present",
+      "location": "Kharagpur, India",
+      "description": "Conducting master's research focusing on scalable systems, distributed computation, consensus optimization, and applied machine learning models."
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "Master of Technology (M.Tech) in Computer Science & Engineering",
+      "institution": "Indian Institute of Technology, Kharagpur (IIT KGP)",
+      "period": "2024 — 2026 (Expected)",
+      "location": "Kharagpur, West Bengal",
+      "description": "Department of Computer Science & Engineering. Core Coursework: Advanced Algorithms, Distributed Systems, High Performance Computer Architecture, Deep Learning."
+    },
+    {
+      "id": "edu-2",
+      "degree": "Bachelor of Technology (B.Tech) in Computer Science & Engineering",
+      "institution": "Swami Vivekananda Institute of Science and Technology",
+      "period": "2020 — 2024",
+      "location": "India",
+      "description": "Graduated with First Class with Distinction. Strong foundation in Data Structures, Algorithms, Computer Architecture, Mathematics, and Database Systems. Qualified GATE CS with top rank."
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "name": "Graduate Aptitude Test in Engineering (GATE Computer Science)",
+      "issuer": "IIT / Ministry of Education, India",
+      "date": "2024",
+      "url": "https://gate.iitk.ac.in/"
+    }
+  ],
+  "admin": {
+    "pinHash": "bfdf9653c854ec7c866ca45f2f431d48999718151922b4277a649e1bba56d81d"
+  },
+  "showPublications": true,
+  "publications": [
+    {
+      "id": "pub-1",
+      "title": "Optimizing Consensus and Tail Latency in Geographically Distributed Raft Clusters",
+      "authors": "Gaurab Samadder, Research Collaborators",
+      "venue": "IEEE / ACM Conference on High Performance Computing & Distributed Systems",
+      "year": "2026",
+      "type": "Conference Paper",
+      "badge": "Accepted / In Proceedings",
+      "paperUrl": "",
+      "codeUrl": "https://github.com",
+      "abstract": "Investigating pipelined log replication, asynchronous quorum acknowledgments, and low-latency transport primitives to reduce tail latencies in distributed storage engines across wide-area network topologies."
+    }
+  ]
+}

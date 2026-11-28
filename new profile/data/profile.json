@@ -292,5 +292,5 @@
       "abstract": "Investigating pipelined log replication, asynchronous quorum acknowledgments, and low-latency transport primitives to reduce tail latencies in distributed storage engines across wide-area network topologies."
     }
   ],
-  "_updatedAt": 1795854903118
+  "_updatedAt": 1795855390257
 }

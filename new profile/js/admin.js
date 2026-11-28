@@ -175,7 +175,7 @@ function initForms() {
         const ghCfg = JSON.parse(localStorage.getItem(GITHUB_CONFIG_KEY) || '{}');
         if (ghCfg.token && ghCfg.repo) {
           try {
-            await commitDataToGitHub(ghCfg.token, ghCfg.repo, ghCfg.branch || 'main', ghCfg.path || 'data/profile.json', currentProfile);
+            await commitDataToGitHub(ghCfg.token, ghCfg.repo, ghCfg.branch || 'main', ghCfg.path || 'new profile/data/profile.json', currentProfile);
             showToast('Published to GitHub! Other devices will see this in ~1 minute.');
           } catch (ghErr) {
             console.warn('Auto GitHub sync failed:', ghErr);
@@ -1555,7 +1555,7 @@ function initGitHubSync() {
   setValue('ghTokenInput', savedGh.token || '');
   setValue('ghRepoInput', savedGh.repo || 'Gaurab7118/profile');
   setValue('ghBranchInput', savedGh.branch || 'main');
-  setValue('ghPathInput', savedGh.path || 'data/profile.json');
+  setValue('ghPathInput', savedGh.path || 'new profile/data/profile.json');
 
   const publishBtn = document.getElementById('publishToGithubBtn');
   if (publishBtn) {
@@ -1563,7 +1563,7 @@ function initGitHubSync() {
       const token = getValue('ghTokenInput').trim();
       const repo = getValue('ghRepoInput').trim();
       const branch = getValue('ghBranchInput').trim() || 'main';
-      const path = getValue('ghPathInput').trim() || 'data/profile.json';
+      const path = getValue('ghPathInput').trim() || 'new profile/data/profile.json';
 
       if (!token || !repo) {
         alert('Please provide your GitHub Personal Access Token (PAT) and Repository name (e.g. username/repo).');

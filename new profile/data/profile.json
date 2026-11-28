@@ -21,22 +21,12 @@
     {
       "platform": "GitHub",
       "icon": "github",
-      "url": "https://github.com"
+      "url": "https://github.com/Gaurab7118"
     },
     {
       "platform": "LinkedIn",
       "icon": "linkedin",
-      "url": "https://linkedin.com"
-    },
-    {
-      "platform": "LeetCode",
-      "icon": "code",
-      "url": "https://leetcode.com"
-    },
-    {
-      "platform": "Email",
-      "icon": "mail",
-      "url": "mailto:gaurab.samadder@iitkgp.ac.in"
+      "url": "https://www.linkedin.com/in/gaurab-samadder-111280298/"
     }
   ],
   "stats": [],
@@ -44,44 +34,128 @@
     {
       "category": "Systems & Programming",
       "items": [
-        { "name": "C++", "icon": "cpp" },
-        { "name": "C", "icon": "c" },
-        { "name": "Python", "icon": "python" },
-        { "name": "Java", "icon": "java" },
-        { "name": "VS Code", "icon": "vscode" },
-        { "name": "Google Colab", "icon": "colab" },
-        { "name": "Windows", "icon": "windows" },
-        { "name": "Linux", "icon": "linux" },
-        { "name": "Distributed Systems & Raft", "icon": "systems" },
-        { "name": "Data Structures & Algorithms", "icon": "algo" }
+        {
+          "name": "C++",
+          "icon": "cpp"
+        },
+        {
+          "name": "C",
+          "icon": "c"
+        },
+        {
+          "name": "Python",
+          "icon": "python"
+        },
+        {
+          "name": "Java",
+          "icon": "java"
+        },
+        {
+          "name": "VS Code",
+          "icon": "vscode"
+        },
+        {
+          "name": "Google Colab",
+          "icon": "colab"
+        },
+        {
+          "name": "Windows",
+          "icon": "windows"
+        },
+        {
+          "name": "Linux",
+          "icon": "linux"
+        },
+        {
+          "name": "Distributed Systems & Raft",
+          "icon": "systems"
+        },
+        {
+          "name": "Data Structures & Algorithms",
+          "icon": "algo"
+        }
       ]
     },
     {
       "category": "AI & Machine Learning",
       "items": [
-        { "name": "PyTorch", "icon": "pytorch" },
-        { "name": "OpenCV", "icon": "opencv" },
-        { "name": "NumPy", "icon": "numpy" },
-        { "name": "Pandas", "icon": "pandas" },
-        { "name": "Transformers", "icon": "ai" },
-        { "name": "Kaggle", "icon": "kaggle" },
-        { "name": "Matplotlib", "icon": "matplotlib" },
-        { "name": "CUDA GPU Programming", "icon": "cuda" },
-        { "name": "Scikit-Learn", "icon": "scikit" }
+        {
+          "name": "PyTorch",
+          "icon": "pytorch"
+        },
+        {
+          "name": "OpenCV",
+          "icon": "opencv"
+        },
+        {
+          "name": "NumPy",
+          "icon": "numpy"
+        },
+        {
+          "name": "Pandas",
+          "icon": "pandas"
+        },
+        {
+          "name": "Transformers",
+          "icon": "ai"
+        },
+        {
+          "name": "Kaggle",
+          "icon": "kaggle"
+        },
+        {
+          "name": "Matplotlib",
+          "icon": "matplotlib"
+        },
+        {
+          "name": "CUDA GPU Programming",
+          "icon": "cuda"
+        },
+        {
+          "name": "Scikit-Learn",
+          "icon": "scikit"
+        }
       ]
     },
     {
       "category": "Databases, Web & Cloud",
       "items": [
-        { "name": "GitHub", "icon": "github" },
-        { "name": "HTML", "icon": "html" },
-        { "name": "CSS", "icon": "css" },
-        { "name": "Vercel", "icon": "vercel" },
-        { "name": "MySQL", "icon": "mysql" },
-        { "name": "SQL & PostgreSQL", "icon": "postgres" },
-        { "name": "Firebase", "icon": "firebase" },
-        { "name": "Docker", "icon": "docker" },
-        { "name": "Full-Stack Development", "icon": "fullstack" }
+        {
+          "name": "GitHub",
+          "icon": "github"
+        },
+        {
+          "name": "HTML",
+          "icon": "html"
+        },
+        {
+          "name": "CSS",
+          "icon": "css"
+        },
+        {
+          "name": "Vercel",
+          "icon": "vercel"
+        },
+        {
+          "name": "MySQL",
+          "icon": "mysql"
+        },
+        {
+          "name": "SQL & PostgreSQL",
+          "icon": "postgres"
+        },
+        {
+          "name": "Firebase",
+          "icon": "firebase"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        },
+        {
+          "name": "Full-Stack Development",
+          "icon": "fullstack"
+        }
       ]
     }
   ],
@@ -217,5 +291,6 @@
       "codeUrl": "https://github.com",
       "abstract": "Investigating pipelined log replication, asynchronous quorum acknowledgments, and low-latency transport primitives to reduce tail latencies in distributed storage engines across wide-area network topologies."
     }
-  ]
+  ],
+  "_updatedAt": 1795853993258
 }

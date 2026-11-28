@@ -207,7 +207,6 @@ function populatePersonalForm() {
   setValue('inputAbout', p.about);
   setValue('inputLocation', p.location);
   setValue('inputEmail', p.email);
-  setValue('inputOfficialEmail', p.officialEmail || '');
   setValue('inputPhone', p.phone);
   setValue('inputAvatarUrl', p.avatar);
   setValue('inputAboutImageUrl', p.aboutImage || p.avatar);
@@ -228,7 +227,6 @@ function populatePersonalForm() {
     { id: 'inputAbout', key: 'about' },
     { id: 'inputLocation', key: 'location' },
     { id: 'inputEmail', key: 'email' },
-    { id: 'inputOfficialEmail', key: 'officialEmail' },
     { id: 'inputPhone', key: 'phone' },
     { id: 'inputAvatarUrl', key: 'avatar', previewId: 'avatarPreview' },
     { id: 'inputAboutImageUrl', key: 'aboutImage', previewId: 'aboutImagePreview' },
@@ -486,48 +484,23 @@ function detectSocialIcon(platform = '') {
  * Helper to auto-detect skill icon from skill name
  */
 function detectSkillIcon(skillName = '') {
-  const n = (skillName || '').toLowerCase().trim();
+  const n = (skillName || '').toLowerCase();
   if (n.includes('c++') || n.includes('modern c')) return 'cpp';
-  if (n === 'c' || n.startsWith('c ') || n.includes('c /')) return 'c';
-  if (n.includes('pytorch')) return 'pytorch';
   if (n.includes('python')) return 'python';
-  if (n.includes('tensorflow')) return 'tensorflow';
-  if (n.includes('numpy')) return 'numpy';
-  if (n.includes('pandas')) return 'pandas';
-  if (n.includes('scikit')) return 'scikit';
-  if (n.includes('opencv')) return 'opencv';
-  if (n.includes('matplotlib')) return 'matplotlib';
-  if (n.includes('kaggle')) return 'kaggle';
-  if (n.includes('colab')) return 'colab';
-  if (n.includes('vs code') || n.includes('vscode')) return 'vscode';
-  if (n.includes('windows')) return 'windows';
+  if (n.includes('pytorch') || n.includes('deep learning')) return 'pytorch';
   if (n.includes('cuda') || n.includes('gpu')) return 'cuda';
-  if (n.includes('linux') || n.includes('kernel') || n.includes('operating')) return 'linux';
+  if (n.includes('linux') || n.includes('kernel') || n.includes('os')) return 'linux';
   if (n.includes('docker') || n.includes('container')) return 'docker';
-  if (n.includes('kubernetes') || n.includes('k8s')) return 'kubernetes';
-  if (n.includes('postgres')) return 'postgres';
-  if (n.includes('mysql')) return 'mysql';
-  if (n.includes('redis')) return 'redis';
-  if (n.includes('mongodb')) return 'mongodb';
-  if (n.includes('firebase')) return 'firebase';
-  if (n.includes('vercel')) return 'vercel';
-  if (n.includes('github')) return 'github';
-  if (n.includes('sql') || n.includes('database')) return 'postgres';
+  if (n.includes('sql') || n.includes('postgres') || n.includes('redis') || n.includes('database')) return 'database';
   if (n.includes('git') || n.includes('ci/cd')) return 'git';
-  if (n.includes('javascript') || n === 'js') return 'javascript';
-  if (n.includes('typescript') || n === 'ts') return 'typescript';
   if (n.includes('java')) return 'java';
-  if (n.includes('golang') || n === 'go' || n.includes('go (')) return 'golang';
+  if (n.includes('golang') || n.includes('go ')) return 'golang';
   if (n.includes('rust')) return 'rust';
-  if (n.includes('react')) return 'react';
-  if (n.includes('node')) return 'nodejs';
-  if (n.includes('html')) return 'html';
-  if (n.includes('css')) return 'css';
-  if (n.includes('full-stack') || n.includes('fullstack')) return 'fullstack';
-  if (n.includes('aws') || n.includes('cloud')) return 'aws';
+  if (n.includes('web') || n.includes('react') || n.includes('html')) return 'web';
   if (n.includes('algorithm') || n.includes('structure')) return 'algo';
-  if (n.includes('deep learning') || n.includes('transformer') || n.includes('neural') || n.includes('machine learning')) return 'ai';
-  if (n.includes('raft') || n.includes('distributed') || n.includes('systems')) return 'systems';
+  if (n.includes('cloud') || n.includes('aws') || n.includes('gcp')) return 'cloud';
+  if (n.includes('machine learning') || n.includes('neural')) return 'ai';
+  if (n.includes('distributed') || n.includes('systems')) return 'systems';
   return 'code';
 }
 
@@ -645,15 +618,14 @@ function populateSkillsManager() {
             const currentSkillIcon = skill.icon || detectSkillIcon(skill.name);
             return `
             <div class="skill-single-row">
-              <span class="skill-logo-preview" id="skill-logo-preview-${catIdx}-${skillIdx}" title="Technology Logo">
-                ${getSkillLogoHtml(currentSkillIcon, skill.name)}
-              </span>
               <select class="form-input" style="font-weight: 600; font-size: 0.85rem;" data-cat="${catIdx}" data-skill="${skillIdx}" data-skill-field="icon">
                 ${SUPPORTED_SKILL_ICONS.map(ic => `
                   <option value="${ic.id}" ${currentSkillIcon === ic.id ? 'selected' : ''}>${ic.label}</option>
                 `).join('')}
               </select>
               <input type="text" class="form-input" value="${skill.name}" placeholder="Skill Name" data-cat="${catIdx}" data-skill="${skillIdx}" data-skill-field="name" />
+              <input type="range" min="10" max="100" value="${skill.level}" data-cat="${catIdx}" data-skill="${skillIdx}" data-skill-field="level" />
+              <span style="font-weight: 600; text-align: right;" id="level-display-${catIdx}-${skillIdx}">${skill.level}%</span>
               <button class="btn-admin btn-admin-danger btn-admin-sm" style="padding: 4px 8px;" data-del-cat="${catIdx}" data-del-skill="${skillIdx}">✕</button>
             </div>
             `;
@@ -676,19 +648,9 @@ function populateSkillsManager() {
         const skillIdx = e.target.getAttribute('data-skill');
         const field = e.target.getAttribute('data-skill-field');
         const val = field === 'level' ? parseInt(e.target.value, 10) : e.target.value;
-        const skillObj = currentProfile.skills[catIdx].items[skillIdx];
-        skillObj[field] = val;
+        currentProfile.skills[catIdx].items[skillIdx][field] = val;
 
-        const previewEl = document.getElementById(`skill-logo-preview-${catIdx}-${skillIdx}`);
-        if (field === 'name') {
-          const detected = detectSkillIcon(val);
-          skillObj.icon = detected;
-          const selectEl = container.querySelector(`select[data-cat="${catIdx}"][data-skill="${skillIdx}"][data-skill-field="icon"]`);
-          if (selectEl) selectEl.value = detected;
-          if (previewEl) previewEl.innerHTML = getSkillLogoHtml(detected, val);
-        } else if (field === 'icon') {
-          if (previewEl) previewEl.innerHTML = getSkillLogoHtml(val, skillObj.name);
-        } else if (field === 'level') {
+        if (field === 'level') {
           const displayEl = document.getElementById(`level-display-${catIdx}-${skillIdx}`);
           if (displayEl) displayEl.textContent = `${val}%`;
         }
@@ -819,7 +781,6 @@ function populateProjectsManager() {
     setValue('projModalLive', project ? project.liveUrl : '');
     setValue('projModalGitHub', project ? project.githubUrl : '');
     setValue('projModalImage', project ? project.image : '');
-    setValue('projModalVideo', project ? (project.videoUrl || '') : '');
     updateImagePreview('projModalImagePreview', project ? project.image : 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80');
 
     const featuredCheck = document.getElementById('projModalFeatured');
@@ -895,7 +856,6 @@ function populateProjectsManager() {
         liveUrl: getValue('projModalLive'),
         githubUrl: getValue('projModalGitHub'),
         image: getValue('projModalImage') || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-        videoUrl: getValue('projModalVideo').trim(),
         featured: document.getElementById('projModalFeatured') ? document.getElementById('projModalFeatured').checked : true
       };
 
@@ -1295,21 +1255,17 @@ function populateCertificationsManager() {
     container.innerHTML = (currentProfile.certifications || []).map((c, idx) => `
       <div class="item-card" id="cert-card-${idx}">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--admin-accent);">Certificate #${idx + 1}</h4>
-          <button type="button" class="btn-admin btn-admin-danger btn-admin-sm" data-del-cert="${idx}">Delete</button>
+          <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--admin-accent);">Certification #${idx + 1}</h4>
+          <button type="button" class="btn-admin btn-admin-danger btn-admin-sm" data-del-cert="${idx}">🗑️ Delete</button>
         </div>
         <div class="form-grid">
           <div class="form-group">
-            <label class="form-label">Certificate Name</label>
+            <label class="form-label">Award / Certification Name</label>
             <input type="text" class="form-input" value="${escapeHtml(c.name || '')}" data-cert-idx="${idx}" data-field="name" placeholder="e.g. GATE Computer Science" />
           </div>
           <div class="form-group">
             <label class="form-label">Issuing Organization / Authority</label>
             <input type="text" class="form-input" value="${escapeHtml(c.issuer || '')}" data-cert-idx="${idx}" data-field="issuer" placeholder="e.g. IIT / Ministry of Education" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Certificate Image URL (Optional)</label>
-            <input type="text" class="form-input" value="${escapeHtml(c.image || '')}" data-cert-idx="${idx}" data-field="image" placeholder="image/cert.jpg or image URL" />
           </div>
           <div class="form-group">
             <label class="form-label">Year / Date</label>
@@ -1481,41 +1437,6 @@ function populateResumeManager() {
  */
 function populateSettingsManager() {
   setValue('inputNewPin', '');
-
-  // Font Style Selector
-  const fontSelect = document.getElementById('fontStyleSelect');
-  const fontPreview = document.getElementById('fontStylePreview');
-  const saveFontBtn = document.getElementById('saveFontStyleBtn');
-  const fontMap = {
-    'space-grotesk': '"Space Grotesk", sans-serif',
-    'inter': '"Inter", sans-serif',
-    'ibm-plex': '"IBM Plex Sans", sans-serif',
-    'jetbrains-mono': '"JetBrains Mono", monospace',
-    'source-serif': '"Source Serif 4", Georgia, serif'
-  };
-
-  if (fontSelect) {
-    const savedFont = (currentProfile.personal && currentProfile.personal.fontStyle)
-      || localStorage.getItem('site-font-style')
-      || 'space-grotesk';
-    fontSelect.value = fontMap[savedFont] ? savedFont : 'space-grotesk';
-    if (fontPreview) fontPreview.style.fontFamily = fontMap[fontSelect.value];
-
-    fontSelect.addEventListener('change', () => {
-      if (fontPreview) fontPreview.style.fontFamily = fontMap[fontSelect.value] || fontMap['space-grotesk'];
-    });
-  }
-
-  if (saveFontBtn && fontSelect) {
-    saveFontBtn.addEventListener('click', async () => {
-      const chosen = fontSelect.value || 'space-grotesk';
-      if (!currentProfile.personal) currentProfile.personal = {};
-      currentProfile.personal.fontStyle = chosen;
-      localStorage.setItem('site-font-style', chosen);
-      await saveProfileData(currentProfile);
-      showToast('Font style updated and saved!');
-    });
-  }
 
   const savePinBtn = document.getElementById('savePinBtn');
   if (savePinBtn) {

@@ -1,771 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gaurab Samadder | Systems Architecture & Machine Learning — IIT Kharagpur</title>
-  <meta name="description" content="Portfolio of Gaurab Samadder, M.Tech Scholar in Computer Science & Engineering at IIT Kharagpur. Research across Distributed Systems, Linux Internals, and Scalable AI." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gaurab Samadder | Systems & Machine Learning — IIT Kharagpur" />
-  <meta property="og:description" content="M.Tech student in Computer Science & Engineering at IIT Kharagpur specializing in Distributed Systems, High-Performance Computing, and Machine Learning." />
-  <meta property="og:image" content="image/avatar.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  
-  <!-- Custom Logo Favicon in Browser Tab -->
-
-    <!-- Favicon Suite (Universal http:// and file:/// support) -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
-  <link rel="apple-touch-icon" href="favicon.png" />
-  <link rel="shortcut icon" href="favicon.ico" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261127" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaurab Samadder | Portfolio Gateway</title>
+  <link rel="icon" type="image/x-icon" href="new profile/favicon.ico">
+  <meta http-equiv="refresh" content="0; url='new%20profile/'">
+  <script>
+    // Immediate redirect to new profile
+    window.location.replace("new%20profile/");
+  </script>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #030712;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+      padding: 24px;
+    }
+    .box {
+      max-width: 480px;
+      padding: 36px 30px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+    }
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      color: #fff;
+      font-weight: 900;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn {
+      display: block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .btn-new {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+    }
+    .btn-old {
+      background: rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
-<body data-theme="dark" data-font="space-grotesk">
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
-
-  <!-- Glowing Background Aurora Mesh -->
-  <div class="aurora-container" aria-hidden="true">
-    <div class="aurora-blob blob-emerald"></div>
-    <div class="aurora-blob blob-violet"></div>
-    <div class="aurora-blob blob-cyan"></div>
-    <div class="noise-overlay"></div>
+<body>
+  <div class="box">
+    <div class="logo-badge">GS</div>
+    <h1>Gaurab Samadder</h1>
+    <p>Redirecting to the new systems architecture portfolio...</p>
+    <div class="links">
+      <a href="new%20profile/" class="btn btn-new">Open New Website →</a>
+      <a href="old%20profile/" class="btn btn-old">Open Classic Website (Old Profile)</a>
+    </div>
   </div>
-
-  <!-- Modern Floating Header -->
-  <header class="site-header" id="header">
-    <div class="header-shell">
-      <!-- Brand Identity: Logo + Name on the Side -->
-      <a href="#" class="brand-link" aria-label="Gaurab Samadder">
-        <div class="brand-badge-wrap">
-          <div class="brand-badge" id="navLogoBadge">GS</div>
-          <span class="badge-pulse"></span>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name" id="navBrandName">Gaurab Samadder</span>
-          <span class="brand-caption" id="navBrandSub">
-            <span class="caption-full">IIT Kharagpur • CSE</span>
-            <span class="caption-short">IIT KGP • CSE</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Navigation Pill Dock -->
-      <nav class="nav-dock" id="navDock" aria-label="Main Navigation">
-        <div class="nav-indicator" id="navIndicator"></div>
-        <ul class="nav-items">
-          <li><a href="#about" class="nav-item active">About</a></li>
-          <li><a href="#skills" class="nav-item">Skills</a></li>
-          <li><a href="#projects" class="nav-item">Projects</a></li>
-          <li id="navPubItem"><a href="#publications" class="nav-item">Research</a></li>
-          <li><a href="#trajectory" class="nav-item">Education</a></li>
-          <li><a href="#certificates" class="nav-item">Certificates</a></li>
-          <li><a href="#contact" class="nav-item">Contact</a></li>
-        </ul>
-
-        <!-- Mobile Menu Utility Actions (Theme, Admin, Resume) -->
-        <div class="mobile-nav-actions">
-          <button id="mobileThemeToggleBtn" type="button" class="util-btn mobile-theme-btn" title="Toggle Theme" aria-label="Toggle Theme">
-            <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
-            <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            <span>Theme</span>
-          </button>
-          <a href="admin.html" class="admin-pill-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Admin</span>
-          </a>
-          <a id="mobileNavResumeBtn" href="assets/cv.pdf" download="Gaurab_Samadder_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm">
-            <span>Résumé</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
-          </a>
-        </div>
-      </nav>
-
-      <!-- Right Utility Controls -->
-      <div class="header-utils">
-        <!-- Theme Switcher -->
-        <button id="themeToggleBtn" class="util-btn" title="Toggle Theme" aria-label="Toggle Theme">
-          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
-          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-
-        <!-- Admin Portal Badge Link -->
-        <a href="admin.html" class="admin-pill-btn" title="Open Admin Portal">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <span>Admin</span>
-        </a>
-
-        <!-- Resume Download -->
-        <a id="navResumeBtn" href="assets/cv.pdf" download="Gaurab_Samadder_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm">
-          <span>Résumé</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
-        </a>
-
-        <!-- Mobile Drawer Toggle -->
-        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle mobile menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- ============================================== -->
-    <!-- HERO & ABOUT SECTION                           -->
-    <!-- ============================================== -->
-    <section id="about" class="hero-section">
-      <!-- Full-Width Interactive Synaptic Network Canvas -->
-      <canvas id="synapseCanvas" class="synapse-canvas" aria-hidden="true"></canvas>
-
-      <div class="container hero-grid hero-merged-grid">
-        <!-- Left Hero & About Narrative Column -->
-        <div class="hero-lead">
-          <div class="live-pill reveal">
-            <span class="live-indicator"></span>
-            <span id="heroStatusText">M.Tech CSE Scholar @ IIT Kharagpur • 2026</span>
-          </div>
-
-          <h1 class="hero-headline reveal">
-            Distributed Systems, <span class="gradient-emerald">High-Performance Computing</span> & Machine Learning.
-          </h1>
-
-          <p class="hero-desc reveal" id="aboutNarrativeText">
-            Hi, I am Gaurab Samadder. I am currently pursuing my Master of Technology (M.Tech) in Computer Science & Engineering at the Indian Institute of Technology, Kharagpur (IIT KGP). My technical and research interests lie in Distributed Systems, Systems Programming, Deep Learning, and Advanced Algorithms.
-
-            Prior to joining IIT KGP, I completed my Bachelor of Technology in Computer Science & Engineering with distinction.
-          </p>
-
-          <!-- Verified Academic & Contact Details -->
-          <div class="meta-details-grid reveal">
-            <div class="meta-cell">
-              <div class="meta-icon-box">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              </div>
-              <div>
-                <span class="cell-label">Current Degree</span>
-                <strong class="cell-val">M.Tech CSE • IIT Kharagpur</strong>
-              </div>
-            </div>
-
-            <div class="meta-cell">
-              <div class="meta-icon-box">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <span class="cell-label">Campus Location</span>
-                <strong class="cell-val" id="aboutLocationText">IIT Kharagpur, West Bengal, India</strong>
-              </div>
-            </div>
-
-            <div class="meta-cell">
-              <div class="meta-icon-box">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <span class="cell-label">Academic Email</span>
-                <strong class="cell-val">
-                  <a id="aboutEmailLink" href="mailto:gaurabsamadder711826@iitkgp.ac.in">gaurabsamadder711826@iitkgp.ac.in</a>
-                </strong>
-              </div>
-            </div>
-
-            <div class="meta-cell">
-              <div class="meta-icon-box">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <span class="cell-label">Official Email</span>
-                <strong class="cell-val">
-                  <a id="aboutOfficialEmailLink" href="mailto:gaurab.samadder@iitkgp.ac.in">gaurab.samadder@iitkgp.ac.in</a>
-                </strong>
-              </div>
-            </div>
-
-            <div class="meta-cell" style="grid-column: 1 / -1;">
-              <div class="meta-icon-box">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <span class="cell-label">Phone Contact</span>
-                <strong class="cell-val">
-                  <a id="aboutPhoneLink" href="tel:+917595923688">+91 75959 23688</a>
-                </strong>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hero Action CTAs -->
-          <div class="hero-actions reveal">
-            <a href="#projects" class="btn btn-emerald btn-glow">
-              View Projects
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a id="heroResumeBtn" href="assets/cv.pdf" download="Gaurab_Samadder_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download M.Tech CV
-            </a>
-            <a href="#contact" class="btn btn-ghost">Contact Me →</a>
-          </div>
-
-          <!-- Quick Access Social & Contact Icons -->
-          <div class="hero-quick-socials reveal" id="heroQuickSocials" aria-label="Quick Contact Links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="quick-social-btn" title="GitHub" aria-label="GitHub">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="quick-social-btn" title="LinkedIn" aria-label="LinkedIn">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="quick-social-btn" title="LeetCode" aria-label="LeetCode">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </a>
-            <a href="mailto:gaurabsamadder711826@iitkgp.ac.in" class="quick-social-btn" title="Email" aria-label="Email">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Hero Visual Column (Large Portrait Card) -->
-        <div class="hero-showcase reveal">
-          <div class="about-visual-card hero-portrait-card" id="heroTiltCard">
-            <div class="about-portrait-wrap">
-              <img id="aboutPortraitImg" class="about-portrait-photo" src="image/about.jpg" alt="Gaurab Samadder" onerror="this.src='image/about.jpg'" />
-              <div class="portrait-overlay-badge">
-                <span class="crest-mark">IIT KGP</span>
-                <span class="crest-text">Dept. of Computer Science & Engineering</span>
-              </div>
-            </div>
-            <div class="visual-card-footer">
-              <h4 class="card-name" id="aboutCardName">Gaurab Samadder</h4>
-              <p class="card-tagline">M.Tech Scholar • IIT Kharagpur (2026)</p>
-              <div class="card-badges">
-                <span class="mini-pill">GATE CS Top Rank</span>
-                <span class="mini-pill">Distributed Systems</span>
-                <span class="mini-pill">CUDA HPC</span>
-              </div>
-            </div>
-            <div class="card-status-pill" style="margin-top: 14px;">
-              <span class="status-radar"></span>
-              <span>Available for SDE, Systems & Research Roles (2026)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Animated Stats Counter Strip -->
-      <div class="container stats-container reveal">
-        <div class="stats-counter-strip">
-          <div class="counter-card spotlight-card">
-            <div class="counter-value-row"><span class="counter-num" data-target="4">0</span><span class="counter-suffix">+</span></div>
-            <span class="counter-desc">Systems & AI Implementations</span>
-          </div>
-          <div class="counter-card spotlight-card">
-            <div class="counter-value-row"><span class="counter-num" data-target="1">0</span></div>
-            <span class="counter-desc">Research Publication (IEEE/ACM)</span>
-          </div>
-          <div class="counter-card spotlight-card">
-            <div class="counter-value-row"><span class="counter-num" data-target="99">0</span><span class="counter-suffix">%ile</span></div>
-            <span class="counter-desc">GATE CS Top Percentile Rank</span>
-          </div>
-          <div class="counter-card spotlight-card">
-            <div class="counter-value-row"><span class="counter-num" data-target="2026">2024</span></div>
-            <span class="counter-desc">IIT Kharagpur Graduation</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- TECHNICAL ARSENAL & CORE COMPETENCIES          -->
-    <!-- ============================================== -->
-    <section id="skills" class="section alt-layer">
-      <div class="container">
-        <div class="section-tag-header reveal">
-          <span class="tag-label">SKILLS</span>
-          <h2 class="tag-title">Technical Skills</h2>
-          <p class="tag-sub">Programming languages, systems tools, and machine learning frameworks.</p>
-        </div>
-
-        <!-- Skill Filter Controls -->
-        <div class="project-filter-dock reveal" id="skillFilterDock">
-          <button class="filter-dock-btn active" data-filter="all">All</button>
-          <button class="filter-dock-btn" data-filter="Systems">Systems & Programming</button>
-          <button class="filter-dock-btn" data-filter="AI">AI & Machine Learning</button>
-          <button class="filter-dock-btn" data-filter="Databases">Databases, Web & Cloud</button>
-        </div>
-
-        <div class="arsenal-grid" id="skillsGridContainer">
-          <!-- Card 1: Systems & Programming -->
-          <div class="arsenal-card spotlight-card reveal" data-category="Systems">
-            <div class="card-corner-badge">C++ / OS</div>
-            <div class="card-icon-header">
-              <div class="icon-avatar emerald-grad">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-              </div>
-              <h3 class="arsenal-title">Systems & Programming</h3>
-            </div>
-            <div class="tech-chips-grid">
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" /></span><span>C++</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" /></span><span>C</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" /></span><span>Python</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" /></span><span>Java</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" /></span><span>VS Code</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8.5 16.5a4.5 4.5 0 1 1 0-9c1.6 0 3 .8 3.5 2 .5-1.2 1.9-2 3.5-2a4.5 4.5 0 1 1 0 9c-1.6 0-3-.8-3.5-2-.5 1.2-1.9 2-3.5 2z"/></svg></span><span>Google Colab</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows" /></span><span>Windows</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" /></span><span>Linux</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M10.8 7.2 6.2 16.8M13.2 7.2l4.6 9.6M7.5 19h9"/></svg></span><span>Distributed Systems & Raft</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="6" height="4"/><rect x="3" y="17" width="6" height="4"/><rect x="15" y="17" width="6" height="4"/><path d="M12 7v5M6 17v-5h12v5"/></svg></span><span>Data Structures & Algorithms</span></div>
-            </div>
-          </div>
-
-          <!-- Card 2: AI & Machine Learning -->
-          <div class="arsenal-card spotlight-card reveal" data-category="AI">
-            <div class="card-corner-badge">GPU / DL</div>
-            <div class="card-icon-header">
-              <div class="icon-avatar emerald-grad">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M16 14v2a4 4 0 0 1-8 0v-2"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
-              </div>
-              <h3 class="arsenal-title">AI & Machine Learning</h3>
-            </div>
-            <div class="tech-chips-grid">
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" /></span><span>PyTorch</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" /></span><span>OpenCV</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" /></span><span>NumPy</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" /></span><span>Pandas</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="7" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="7" r="2"/><circle cx="19" cy="17" r="2"/><path d="M7 8l3.3 2.7M7 16l3.3-2.7M13.7 10.7 17 8M13.7 13.3 17 16"/></svg></span><span>Transformers</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kaggle/kaggle-original.svg" alt="Kaggle" /></span><span>Kaggle</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" /></span><span>Matplotlib</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12"/><rect x="10" y="10" width="4" height="4"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><span>CUDA GPU Programming</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" /></span><span>Scikit-Learn</span></div>
-            </div>
-          </div>
-
-          <!-- Card 3: Databases, Web & Cloud -->
-          <div class="arsenal-card spotlight-card reveal" data-category="Databases">
-            <div class="card-corner-badge">INFRA</div>
-            <div class="card-icon-header">
-              <div class="icon-avatar emerald-grad">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <h3 class="arsenal-title">Databases, Web & Cloud</h3>
-            </div>
-            <div class="tech-chips-grid">
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.27a11 11 0 0 0-3.48 21.46c.55.1.73-.24.73-.53v-1.85c-3.03.66-3.67-1.45-3.67-1.45-.5-1.26-1.21-1.6-1.21-1.6-.99-.68.07-.66.07-.66 1.09.08 1.67 1.12 1.67 1.12.97 1.66 2.54 1.18 3.16.9.1-.7.38-1.18.69-1.45-2.42-.27-4.96-1.21-4.96-5.4 0-1.19.42-2.16 1.12-2.93-.11-.28-.49-1.39.11-2.89 0 0 .92-.3 3 1.12a10.4 10.4 0 0 1 5.5 0c2.08-1.42 3-1.12 3-1.12.6 1.5.22 2.61.11 2.89.7.77 1.12 1.74 1.12 2.93 0 4.2-2.55 5.12-4.98 5.39.39.34.74 1.01.74 2.04v3.02c0 .29.19.63.74.53A11 11 0 0 0 12 1.27z"/></svg></span><span>GitHub</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" /></span><span>HTML</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" /></span><span>CSS</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 20h20L12 3z"/></svg></span><span>Vercel</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" /></span><span>MySQL</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="SQL" /></span><span>SQL & PostgreSQL</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" alt="Firebase" /></span><span>Firebase</span></div>
-              <div class="tech-chip"><span class="tech-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" /></span><span>Docker</span></div>
-              <div class="tech-chip"><span class="tech-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg></span><span>Full-Stack Development</span></div>
-            </div>
-          </div>
-        </div>
-        <!-- Interactive Skill Detail Box (appears on click, toggles off on second click) -->
-        <div class="skill-detail-box" id="skillDetailBox" aria-live="polite" hidden>
-          <div class="skill-detail-head">
-            <span class="tech-logo" id="skillDetailLogo"></span>
-            <div style="flex: 1;">
-              <span class="cell-label" id="skillDetailCategory">TECHNOLOGY OVERVIEW</span>
-              <h4 class="skill-detail-title" id="skillDetailTitle"></h4>
-            </div>
-            <button type="button" class="skill-detail-close" id="skillDetailClose" aria-label="Close skill details">✕</button>
-          </div>
-          <p class="skill-detail-desc" id="skillDetailDesc"></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- SYSTEMS & AI PROJECTS SHOWCASE                 -->
-    <!-- ============================================== -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-tag-header reveal">
-          <span class="tag-label">PROJECTS</span>
-          <h2 class="tag-title">Selected Projects</h2>
-          <p class="tag-sub">Distributed storage engines, GPU compute kernels, and Linux kernel scheduling.</p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="project-filter-dock reveal" id="projectFilterDock">
-          <button class="filter-dock-btn active" data-filter="all">All Systems</button>
-          <button class="filter-dock-btn" data-filter="Systems">Distributed Systems</button>
-          <button class="filter-dock-btn" data-filter="AI / HPC">GPU & AI Compute</button>
-          <button class="filter-dock-btn" data-filter="Algorithms">Algorithms & Linux</button>
-        </div>
-
-        <!-- Projects Slider -->
-        <div class="projects-slider-wrap">
-          <button type="button" class="slider-nav-btn slider-prev" id="projSliderPrev" aria-label="Previous projects">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-
-          <div class="modern-projects-grid" id="projectsGridContainer">
-          <!-- Card 1 -->
-          <article class="modern-project-card spotlight-card reveal" data-category="Systems">
-            <div class="project-media-box">
-              <img src="image/research.jpg" alt="Distributed Fault-Tolerant Key-Value Store" />
-            </div>
-            <div class="project-card-body">
-              <div class="project-badge-bar">
-                <span class="cat-pill systems-pill">Systems</span>
-              </div>
-              <h3 class="proj-title">Distributed Fault-Tolerant Key-Value Store</h3>
-              <p class="proj-desc">
-                High-throughput distributed storage engine engineered in C++20 implementing the Raft consensus algorithm with leader election, log compaction, snapshotting, and write-ahead logging.
-              </p>
-              <div class="proj-tags-list">
-                <span class="proj-tag">C++20</span>
-                <span class="proj-tag">Raft Consensus</span>
-                <span class="proj-tag">gRPC</span>
-                <span class="proj-tag">Multi-Threading</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-note-link">
-                  <span>View Source Implementation</span>
-                  <span>↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="modern-project-card spotlight-card reveal" data-category="AI / HPC">
-            <div class="project-media-box">
-              <img src="image/banner.jpg" alt="CUDA GPU Tensor Acceleration Engine" />
-            </div>
-            <div class="project-card-body">
-              <div class="project-badge-bar">
-                <span class="cat-pill hpc-pill">AI / HPC</span>
-              </div>
-              <h3 class="proj-title">CUDA GPU Tensor Acceleration Engine</h3>
-              <p class="proj-desc">
-                Custom GPU kernels in CUDA utilizing shared memory tiling and warp-level primitives to accelerate large-scale matrix operations, achieving 3.8x speedup over standard baseline CPU executions.
-              </p>
-              <div class="proj-tags-list">
-                <span class="proj-tag">CUDA</span>
-                <span class="proj-tag">C++</span>
-                <span class="proj-tag">PyTorch C++ API</span>
-                <span class="proj-tag">GPU Optimization</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-note-link">
-                  <span>View Source Implementation</span>
-                  <span>↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="modern-project-card spotlight-card reveal" data-category="Systems">
-            <div class="project-media-box">
-              <img src="image/research.jpg" alt="Custom Linux Kernel CPU Scheduler" />
-            </div>
-            <div class="project-card-body">
-              <div class="project-badge-bar">
-                <span class="cat-pill systems-pill">Systems</span>
-              </div>
-              <h3 class="proj-title">Custom Linux Kernel CPU Scheduler</h3>
-              <p class="proj-desc">
-                Engineered a multi-level priority CPU scheduler inside the Linux Kernel (v5.15) with automated starvation prevention, dynamic task weighting, and eBPF tracing.
-              </p>
-              <div class="proj-tags-list">
-                <span class="proj-tag">C</span>
-                <span class="proj-tag">Linux Kernel</span>
-                <span class="proj-tag">Kernel Modules</span>
-                <span class="proj-tag">eBPF</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-note-link">
-                  <span>View Source Implementation</span>
-                  <span>↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="modern-project-card spotlight-card reveal" data-category="Algorithms">
-            <div class="project-media-box">
-              <img src="image/banner.jpg" alt="Parallel Graph Analytics Engine with OpenMP" />
-            </div>
-            <div class="project-card-body">
-              <div class="project-badge-bar">
-                <span class="cat-pill algo-pill">Algorithms</span>
-              </div>
-              <h3 class="proj-title">Parallel Graph Analytics Engine with OpenMP</h3>
-              <p class="proj-desc">
-                High-performance multi-threaded graph analytics pipeline computing PageRank and Betweenness Centrality on graphs with 10M+ edges in under 4 seconds.
-              </p>
-              <div class="proj-tags-list">
-                <span class="proj-tag">Modern C++</span>
-                <span class="proj-tag">OpenMP</span>
-                <span class="proj-tag">SIMD</span>
-                <span class="proj-tag">Graph Theory</span>
-              </div>
-              <div class="project-card-footer">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-note-link">
-                  <span>View Source Implementation</span>
-                  <span>↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-          <button type="button" class="slider-nav-btn slider-next" id="projSliderNext" aria-label="Next projects">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- SCHOLARLY INQUIRIES: RESEARCH & PUBLICATIONS   -->
-    <!-- ============================================== -->
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-tag-header reveal">
-          <span class="tag-label">PUBLICATIONS</span>
-          <h2 class="tag-title single-line-title">Research & Peer-Reviewed Publications</h2>
-          <p class="tag-sub">Conference proceedings and research papers.</p>
-        </div>
-
-        <div class="publications-deck" id="publicationsGridContainer">
-          <div class="paper-card spotlight-card reveal">
-            <div class="paper-top-badge">
-              <span class="pulse-emerald"></span>
-              <span>Conference Paper · Accepted &amp; In Proceedings (2026)</span>
-            </div>
-
-            <h3 class="paper-headline">
-              Optimizing Consensus and Tail Latency in Geographically Distributed Raft Clusters
-            </h3>
-
-            <p class="paper-authors">
-              <strong>Gaurab Samadder</strong>, Research Collaborators
-            </p>
-
-            <p class="paper-venue">
-              IEEE / ACM Conference on High Performance Computing &amp; Distributed Systems
-            </p>
-
-            <div class="paper-abstract-box">
-              <p>
-                <strong>Abstract —</strong> Investigating pipelined log replication, asynchronous quorum acknowledgments, and low-latency transport primitives to reduce tail latencies in distributed storage engines across wide-area network topologies. Explores speculative state transitions while guaranteeing strict linearizability.
-              </p>
-            </div>
-
-            <div class="paper-footer-actions">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm">
-                Source Implementation ↗
-              </a>
-              <span class="meta-tag">Linearizability</span>
-              <span class="meta-tag">Raft Consensus</span>
-              <span class="meta-tag">Tail Latency</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- ACADEMIC TRAJECTORY & EXPERIENCE               -->
-    <!-- ============================================== -->
-    <section id="trajectory" class="section alt-layer">
-      <div class="container">
-        <div class="section-tag-header reveal">
-          <span class="tag-label">BACKGROUND</span>
-          <h2 class="tag-title">Experience & Education</h2>
-          <p class="tag-sub">Teaching assistantships, research roles, degrees, and academic milestones.</p>
-        </div>
-
-        <div class="trajectory-split">
-          <!-- Teaching & Research Appointments Column -->
-          <div class="trajectory-col reveal">
-            <h3 class="col-heading">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              Teaching & Research Roles
-            </h3>
-
-            <div class="timeline-nodes-stack" id="experienceListContainer">
-              <div class="trajectory-node spotlight-card">
-                <span class="node-year">2024 — Present</span>
-                <h4 class="node-title">Graduate Teaching Assistant (TA)</h4>
-                <p class="node-inst">Department of Computer Science & Engineering, IIT Kharagpur</p>
-                <p class="node-body">
-                  Mentoring undergraduate students in Algorithms and Operating Systems laboratory sessions, designing coding assessments, and evaluating system programming assignments.
-                </p>
-              </div>
-
-              <div class="trajectory-node spotlight-card">
-                <span class="node-year">2024 — Present</span>
-                <h4 class="node-title">M.Tech Systems Researcher</h4>
-                <p class="node-inst">Dept. of CSE, Indian Institute of Technology, Kharagpur</p>
-                <p class="node-body">
-                  Conducting master's research focusing on scalable systems, distributed computation, consensus optimization, and applied machine learning models.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Degrees & Honors Column -->
-          <div class="trajectory-col reveal">
-            <h3 class="col-heading">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              Education & Degrees
-            </h3>
-
-            <div class="timeline-nodes-stack" id="educationListContainer">
-              <div class="trajectory-node spotlight-card prime-border">
-                <span class="node-year">2024 — 2026 (Expected)</span>
-                <h4 class="node-title">Master of Technology (M.Tech) in CSE</h4>
-                <p class="node-inst">Indian Institute of Technology, Kharagpur (IIT KGP)</p>
-                <p class="node-body">
-                  Department of Computer Science & Engineering. Core Coursework: Advanced Algorithms, Distributed Systems, High Performance Computer Architecture, Deep Learning.
-                </p>
-              </div>
-
-              <div class="trajectory-node spotlight-card">
-                <span class="node-year">2020 — 2024</span>
-                <h4 class="node-title">Bachelor of Technology (B.Tech) in CSE</h4>
-                <p class="node-inst">Swami Vivekananda Institute of Science and Technology</p>
-                <p class="node-body">
-                  Graduated with First Class with Distinction. Strong foundation in Data Structures, Algorithms, Computer Architecture, and Database Systems. Qualified GATE CS with top rank.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- CERTIFICATES SHOWCASE (SLIDER LIKE PROJECTS)   -->
-    <!-- ============================================== -->
-    <section id="certificates" class="section alt-layer">
-      <div class="container">
-        <div class="section-tag-header reveal">
-          <span class="tag-label">CERTIFICATES</span>
-          <h2 class="tag-title">Certificates</h2>
-          <p class="tag-sub">Verified credentials and technical certifications.</p>
-        </div>
-
-        <div class="projects-slider-wrap">
-          <button type="button" class="slider-nav-btn slider-prev" id="certSliderPrev" aria-label="Previous certificates">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-
-          <div class="modern-projects-grid" id="certListContainer">
-            <article class="modern-project-card spotlight-card reveal">
-              <div class="project-media-box">
-                <img src="image/research.jpg" alt="Graduate Aptitude Test in Engineering (GATE CS)" />
-                <span class="media-type-badge">VERIFIED</span>
-              </div>
-              <div class="project-card-body">
-                <div class="project-badge-bar">
-                  <span class="cat-pill systems-pill">2024</span>
-                </div>
-                <h3 class="proj-title">Graduate Aptitude Test in Engineering (GATE Computer Science)</h3>
-                <p class="proj-desc">IIT / Ministry of Education, India</p>
-                <div class="project-card-footer">
-                  <a href="https://gate.iitk.ac.in/" target="_blank" rel="noopener noreferrer" class="project-note-link">
-                    <span>Verify Credential</span>
-                    <span>↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <button type="button" class="slider-nav-btn slider-next" id="certSliderNext" aria-label="Next certificates">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- DIALOGUE & COLLABORATION (CONTACT)             -->
-    <!-- ============================================== -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="contact-card-box spotlight-card reveal">
-          <div class="contact-badge">CONTACT</div>
-          <h2 class="contact-heading">Get in Touch</h2>
-          <p class="contact-subhead">
-            Open to Software Engineering (SDE), Systems, and Machine Learning roles. Feel free to reach out via email or phone.
-          </p>
-
-          <div class="contact-buttons-row">
-            <a id="contactEmailBtn" href="mailto:gaurabsamadder711826@iitkgp.ac.in?subject=Collaboration%20Inquiry%20via%20Portfolio" class="btn btn-emerald btn-glow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Send Me An Email
-            </a>
-            <a href="tel:+917595923688" class="btn btn-glass">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +91 75959 23688
-            </a>
-            <a href="admin.html" class="btn btn-ghost">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              Admin Control Portal
-            </a>
-          </div>
-
-          <!-- Social Links Strip -->
-          <div class="social-pills-wrap" id="socialPillsWrap">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill-link">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill-link">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="social-pill-link">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              LeetCode
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Modern Futuristic Footer -->
-  <footer class="site-footer">
-    <div class="container footer-shell">
-      <div class="footer-left-col">
-        <div class="footer-brand">
-          <div class="brand-badge small" id="footerBrandBadge">GS</div>
-          <span class="footer-name" id="footerBrandName">Gaurab Samadder</span>
-        </div>
-        <p class="footer-meta">
-          M.Tech Scholar in Computer Science & Engineering • Indian Institute of Technology Kharagpur
-        </p>
-        <p class="footer-rights">
-          © <span id="currentYear">2026</span> Gaurab Samadder
-        </p>
-      </div>
-
-      <div class="footer-links-col">
-        <a href="#about" class="footer-anchor">Top ↑</a>
-        <a href="admin.html" class="footer-anchor admin-btn-highlight">Admin Portal ⚙</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js?v=20261127"></script>
 </body>
 </html>
